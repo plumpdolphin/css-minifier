@@ -1,26 +1,12 @@
 #include <regex>
 #include <string>
 #include <iostream>
-
-void
-replace(std::string* str, std::string a, std::string b) {
-    size_t pos = 0;
-    do
-    {
-        pos = str->find(a, pos);
-        if (pos == std::string::npos)
-            break;
- 
-        str->erase(pos, a.length());
-        str->insert(pos, b);
-    }
-    while (pos += a.length());
-}
+#include <algorithm>
 
 std::string
 minify(std::string str) {
     // Remove newlines
-    replace(&str, "\n", "");
+    std::erase(str, '\n');
 
     // Remove spacing around special characters
     str = std::regex_replace(str, std::regex("\\s*([{},:;^|$~>()/\\[\\]])\\s*"), "$1");
@@ -29,7 +15,8 @@ minify(std::string str) {
     str = std::regex_replace(str, std::regex("/\\*.*?\\*/"), "");
     
     // Remove unnecessary trailing semicolons
-    replace(&str, ";}", "}");
+    str = std::regex_replace(str, std::regex(":}"), "}");
+    //replace(&str, ";}", "}");
 
     // Shorten relative URIs
     str = std::regex_replace(str, std::regex("[^\\.]\\./"), "");
