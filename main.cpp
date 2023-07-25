@@ -31,11 +31,8 @@ minify(std::string str) {
     // Remove unnecessary trailing semicolons
     replace(&str, ";}", "}");
 
-    // Shorten relative URLs
-    str = std::regex_replace(str, std::regex("url\\(\"./([^\"]*)\"\\)"), "url(\"$1\")");
-    
-    // Shorten relative imports
-    str = std::regex_replace(str, std::regex("@import \"./([^\"]*)\""), "@import \"$1\"");
+    // Shorten relative URIs
+    str = std::regex_replace(str, std::regex("[^\\.]\\./"), "");
 
     return str;
 }
