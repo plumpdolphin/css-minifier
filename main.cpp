@@ -23,7 +23,7 @@ minify(std::string str) {
     replace(&str, "\n", "");
 
     // Remove spacing around special characters
-    str = std::regex_replace(str, std::regex("\\s*([{},:;>()/])\\s*"), "$1");
+    str = std::regex_replace(str, std::regex("\\s*([{},:;^|$~>()/\\[\\]])\\s*"), "$1");
 
     // Remove comments
     str = std::regex_replace(str, std::regex("/\\*.*?\\*/"), "");
