@@ -1,4 +1,10 @@
-# css-minifier
+<div align="center">
+<h1>CSS Minifier</h1>
+
+[![License](https://img.shields.io/badge/License-CC0%201.0-informational?style=flat-square)](https://github.com/plumpdolphin/dreamicons/blob/main/LICENSE)
+[![C++](https://img.shields.io/badge/C%2B%2B-2020-blue?style=flat-square&logo=cplusplus)](https://isocpp.org/)
+</div>
+
 A simple, fast, rootin-and-tootin CSS minifier CLI tool to take your CSS game to the next, much-smaller level!
 
 The tool is designed to be used with UNIX-based piping to allow for easy integration into a variety of build systems. The tool takes in a CSS file as a string through system `stdin`, processes the code, and spits out the result to `stdout`. Simple as that!
@@ -17,5 +23,10 @@ type index.css | css-minify.exe > index.min.css
 ```
 
 And that's all there is to it!
+<hr>
 
-Good luck on your projects, and happy coding!
+I wish you the best of luck in your projects. If you have any questions, feel free to reach out!
+
+<div align=center font-size="4rem">
+    <h3>:cloud: <strong><i>Happy coding!</i></strong> :cloud:</h3>
+</div>
